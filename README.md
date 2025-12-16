@@ -8,6 +8,7 @@ Simple Python automation tool to scan folders and display file & folder
 - Show file size (auto unit: KB, MB, GB)
 - Scan folder recursively
 - Display total number of subfolders and files
+- Seperated file main.py and core.py for logic
 
 ## Example Output
 [FILE] photo.jpg || 2.35 MB
