@@ -1,3 +1,4 @@
+import argparse
 import os
 import math
 from organizer.core import (
@@ -7,7 +8,28 @@ from organizer.core import (
     folder_info
 )
 
-folder_path = 'D:/LATIHAN_Python_Portofolio/portofolio/automation_file_organizer/tests/sample_files'
+parser = argparse.ArgumentParser(description="Automation File Organizer")
+
+parser.add_argument(
+    "--path",
+    required=True,
+    help="Target folder path to scan"
+)
+
+parser.add_argument(
+    "--mode",
+    default="scan",
+    choices=["scan"],
+    help="Operation mode"
+)
+
+args = parser.parse_args()
+
+if args.mode != "scan":
+    print("Mode not supported")
+    exit(1)
+
+folder_path = args.path
 contents = os.listdir(folder_path)
 
 for item in contents:
