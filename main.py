@@ -23,7 +23,16 @@ parser.add_argument(
     help="Operation mode"
 )
 
+parser.add_argument(
+    "--dry-run",
+    action="store_true",
+    help="Simulate only, do not modify anything"
+)
+
 args = parser.parse_args()
+
+if args.dry_run:
+    print("[INFO] Dry-run mode enabled (no changes will be made)")
 
 if args.mode != "scan":
     print("Mode not supported")
