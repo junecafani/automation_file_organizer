@@ -1,14 +1,18 @@
 # Automation File Organizer
 
-Simple Python automation tool to scan folders and display file & folder
+Simple Python automation tool to scan folders and display file & folder info.
 
-## Features (v0.4)
+## Current Version
+v0.8
+
+## Features
 - List files and folder in a directory
 - Detect file and folder
 - Show file size (auto unit: KB, MB, GB)
 - Scan folder recursively
 - Display total number of subfolders and files
 - Seperated file main.py and core.py for logic
+- Scan folder via CLI argument (--path)
 
 ## Example Output
 [FILE] photo.jpg || 2.35 MB
@@ -16,4 +20,10 @@ Simple Python automation tool to scan folders and display file & folder
 
 ## How to Run
 ```bash
-python main.py
+python main.py --path target_folder
+```
+
+## Project Status
+Work in Progress.
+
+
