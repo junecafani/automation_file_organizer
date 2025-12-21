@@ -32,3 +32,34 @@ def folder_info(path):
 
     return total_folders, total_files
 
+## Rename files
+def preview_rename(path):
+    items = os.listdir(path)
+
+    for i, name in enumerate(items, start=1):
+        full_path = os.path.join(path, name)
+
+        if not os.path.isfile(full_path):
+            continue
+
+        root, ext = os.path.splitext(name)
+        new_name = f"secretary-kim_{i}{ext}"
+
+        print(f"[DRY-RUN] {name} -> {new_name}")
+
+def apply_rename(path):
+    items = os.listdir(path)
+    index = 1
+
+    for name in items:
+        full_path = os.path.join(path, name)
+
+        if not os.path.isfile(full_path):
+            continue
+
+        root, ext = os.path.splitext(name)
+        new_name = f"secretary-kim_{index}{ext}"
+        new_path = os.path.join(path, new_name)
+
+        os.rename(full_path, new_path)
+        index += 1
